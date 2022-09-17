@@ -1,0 +1,103 @@
+<!doctype html>
+<title>CSS Grid Template 1</title>
+<!-- <style>
+body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "nav footer footer";
+  grid-template-rows: 80px 1fr 70px;  
+  grid-template-columns: 20% 1fr 15%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }  
+header, footer, article, nav, div {
+  padding: 1.2em;
+  background: gold;
+  }
+#pageHeader {
+  grid-area: header;
+  }
+#pageFooter {
+  grid-area: footer;
+  }
+#mainArticle { 
+  grid-area: article;      
+  }
+#mainNav { 
+  grid-area: nav; 
+  }
+#siteAds { 
+  grid-area: ads; 
+  } 
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+ }
+}
+</style> -->
+<body>
+  <!-- <header id="pageHeader">Header</header>
+  <article id="mainArticle">Article</article>
+  <nav id="mainNav">Nav</nav>
+  <div id="siteAds">Ads</div>
+  <footer id="pageFooter">Footer</footer> -->
+
+  <script> 
+let btn = document.createElement('button');
+btn.textContent = 'show';
+document.body.appendChild(btn);
+let grid = document.querySelector('body');
+grid.setAttribute('style', 'display: grid; grid-template-areas: "header header header" "nav article ads" "nav footer footer"; grid-template-rows: 80px 1fr 70px; grid-template-columns: 20% 1fr 15%; grid-row-gap: 10px; grid-column-gap: 10px; height: 100vh; margin: 0;');
+let header = document.createElement('header');
+header.setAttribute('style', 'grid-area: header; padding: 1.2em; background: gold;');
+let article = document.createElement('article');
+article.setAttribute('style', 'grid-area: article; padding: 1.2em; background: gold;');
+let nav = document.createElement('nav');
+
+nav.setAttribute('style', 'grid-area: nav; padding: 1.2em; background: gold;');
+let ads = document.createElement('div');
+
+ads.setAttribute('style', 'grid-area: ads; padding: 1.2em; background: gold;');
+let footer = document.createElement('footer');
+
+footer.setAttribute('style', 'grid-area: footer; padding: 1.2em; background: gold;');
+
+header.id = 'pageHeader';
+article.id = 'mainArticle';
+nav.id = 'mainNav';
+ads.id = 'siteAds';
+footer.id = 'pageFooter';
+
+header.textContent = 'Header';
+article.textContent = 'Article';
+nav.textContent = 'Nav';
+ads.textContent = 'Ads';
+footer.textContent = 'Footer';
+
+
+
+btn.addEventListener('click', function() {
+  for(let i = 0; i < 5; i++) {
+    grid.appendChild(header);
+    grid.appendChild(article);
+    grid.appendChild(nav);
+    grid.appendChild(ads);
+    grid.appendChild(footer);
+
+  }
+  btn.style.display = 'none';
+});
+  </script>
+</body>

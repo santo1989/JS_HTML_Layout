@@ -1,0 +1,197 @@
+<!doctype html>
+<title>JS OOP CSS Grid</title>
+
+<body>
+
+
+  <script> 
+
+  let Team5 ={};
+  Team5.layoutCreate = {
+init: () =>{
+
+  // let btn = document.createElement('button');
+  // btn.textContent = 'show';
+  // document.body.appendChild(btn);
+  // btn.addEventListener('click', Team5.layoutCreate.display);
+
+},
+
+// grid: () => {
+//   let grid = document.createElement('div');
+//   grid.setAttribute('id', 'grid');
+//   grid.setAttribute('style', 'display: grid; grid-template-areas: "header header header" "nav article ads" "nav footer footer"; grid-template-rows: 80px 1fr 70px; grid-template-columns: 20% 1fr 15%; grid-row-gap: 10px; grid-column-gap: 10px; height: 100vh; margin: 0;');
+//   document.body.appendChild(grid);
+// },
+
+grid: (gridTemplateAreas, gridTemplateRows, gridTemplateColumns, gridRowGap, gridColumnGap, height, margin) => {
+  let grid = document.createElement('div');
+  grid.setAttribute('id', 'grid');
+  grid.setAttribute('style',
+  'display: grid; grid-template-areas: ' + gridTemplateAreas + '; grid-template-rows: ' + gridTemplateRows + '; grid-template-columns: ' + gridTemplateColumns + '; grid-row-gap: ' + gridRowGap + '; grid-column-gap: ' + gridColumnGap + '; height: ' + height + '; margin: ' + margin + ';'); 
+  document.body.appendChild(grid);
+},
+
+
+header: () => {
+  let header = document.createElement('div');
+  header.setAttribute('id', 'header');
+  header.setAttribute('style', 'grid-area: header; padding: 1.2em; background: gold;');
+  document.getElementById('grid').appendChild(header);
+},
+
+article: () => {
+  let article = document.createElement('div');
+  article.setAttribute('id', 'article');
+  article.setAttribute('style', 'grid-area: article; padding: 1.2em; background: gold;');
+  document.getElementById('grid').appendChild(article);
+},
+
+nav: () => {
+  let nav = document.createElement('div');
+  nav.setAttribute('id', 'nav');
+  nav.setAttribute('style', 'grid-area: nav; padding: 1.2em; background: gold;');
+  document.getElementById('grid').appendChild(nav);
+},
+
+ads: () => {
+  let ads = document.createElement('div');
+  ads.setAttribute('id', 'ads');
+  ads.setAttribute('style', 'grid-area: ads; padding: 1.2em; background: gold;');
+  document.getElementById('grid').appendChild(ads);
+},
+
+footer: () => {
+  let footer = document.createElement('div');
+  footer.setAttribute('id', 'footer');
+  footer.setAttribute('style', 'grid-area: footer; padding: 1.2em; background: gold;');
+  document.getElementById('grid').appendChild(footer);
+},
+
+HeaderText: (HeaderText) => {
+  let headerText = document.createElement('h1');
+  headerText.textContent = HeaderText;
+  document.getElementById('header').appendChild(headerText);
+  
+  // let input = document.createElement('input');
+  // input.setAttribute('type', 'text');
+  // input.setAttribute('id', 'input');
+  // input.setAttribute('placeholder', 'Enter Header Text');
+  // input.setAttribute('style', 'width: 100%; height: 100%;');
+  // document.getElementById('header').appendChild(input);
+},
+
+ArticleText: (ArticleText) => {
+  let articleText = document.createElement('p');
+  articleText.textContent = ArticleText;
+  document.getElementById('article').appendChild(articleText);
+  // let input = document.createElement('input');
+  // input.setAttribute('type', 'text');
+  // input.setAttribute('id', 'input');
+  // input.setAttribute('placeholder', 'Enter Article Text');
+  // input.setAttribute('style', 'width: 100%; height: 100%;');
+  // document.getElementById('article').appendChild(input);
+},
+
+NavText: (NavText) => {
+
+  let navText = document.createElement('p');
+  navText.textContent = NavText;
+  document.getElementById('nav').appendChild(navText);
+  // let input = document.createElement('input');
+  // input.setAttribute('type', 'text');
+  // input.setAttribute('id', 'input');
+  // input.setAttribute('placeholder', 'Enter Nav Text');
+  // input.setAttribute('style', 'width: 100%; height: 100%;');
+  // document.getElementById('nav').appendChild(input);
+},
+
+AdsText: (AdsText) => {
+  let adsText = document.createElement('p');
+  adsText.textContent = AdsText;
+  document.getElementById('ads').appendChild(adsText);
+
+  // let input = document.createElement('input');
+  // input.setAttribute('type', 'text');
+  // input.setAttribute('id', 'input');
+  // input.setAttribute('placeholder', 'Enter Ads Text');
+  // input.setAttribute('style', 'width: 100%; height: 100%;');
+  // document.getElementById('ads').appendChild(input);
+},
+
+FooterText: (FooterText) => {
+
+  let footerText = document.createElement('p');
+  footerText.textContent = FooterText;
+  document.getElementById('footer').appendChild(footerText);
+  // let input = document.createElement('input');
+  // input.setAttribute('type', 'text');
+  // input.setAttribute('id', 'input');
+  // input.setAttribute('placeholder', 'Enter Footer Text');
+  // input.setAttribute('style', 'width: 100%; height: 100%;');
+  // document.getElementById('footer').appendChild(input);
+},
+
+
+display: () => {
+  
+  // let headerValue = document.getElementById('header').value;
+  // let articleValue = document.getElementById('article').value;
+  // let navValue = document.getElementById('nav').value;
+  // let adsValue = document.getElementById('ads').value;
+  // let footerValue = document.getElementById('footer').value;
+// btn.addEventListener('click', function() {
+//   for(let i = 0; i < 5; i++) {
+    Team5.layoutCreate.grid(' "header header header" "nav article ads" "nav footer footer" ', ' 80px 1fr 70px ', ' 20% 1fr 15% ', ' 10px ', ' 10px ', ' 100vh ', ' 0 ');
+    Team5.layoutCreate.header();
+    Team5.layoutCreate.article();
+    Team5.layoutCreate.nav();
+    Team5.layoutCreate.ads();
+    Team5.layoutCreate.footer();
+    Team5.layoutCreate.HeaderText('Header');
+    Team5.layoutCreate.ArticleText('Article');
+    Team5.layoutCreate.NavText('Nav');
+    Team5.layoutCreate.AdsText('Ads');
+    Team5.layoutCreate.FooterText('Footer');
+    
+
+  // }
+//   btn.style.display = 'none';
+// });
+
+
+},
+
+  
+  };
+
+
+  let btn = document.createElement('button');
+  btn.textContent = 'show';
+
+  document.body.appendChild(btn);
+  btn.addEventListener('click', function() {
+    Team5.layoutCreate.display();
+    btn.style.display = 'none';
+  });
+  // Team5.layoutCreate.display();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+  </script>
+</body>

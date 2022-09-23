@@ -2,20 +2,10 @@
 <title>JS OOP CSS Grid</title>
 
 <body>
-
-
-
-  
   <script>
     let Team5 = {}
     Team5.layoutCreate = {
-      init: () => {
-        let headerinput = document.getElementById('headerinput')
-        let navinput = document.getElementById('navinput')
-        let articleinput = document.getElementById('articleinput')
-        let adsinput = document.getElementById('adsinput')
-        let footerinput = document.getElementById('footerinput')
-      },
+      init: () => {},
 
       grid: (
         gridTemplateAreas,
@@ -130,7 +120,6 @@
       },
 
       display: () => {
-
         Team5.layoutCreate.grid(
           ' "header header header" "nav article ads" "nav footer footer" ',
           ' 80px 1fr 70px ',

@@ -1,0 +1,210 @@
+// let gridStructure ={
+//     headerArea: true,
+//     footerArea: true,
+//     navArea: true,
+//     adsArea: true,
+//     articleArea: true,
+//     collumns: 3,
+//     rows: 3,
+//   }
+
+//   for(let i = 0; i < gridStructure.rows; i++){
+//     for(let j = 0; j < gridStructure.collumns; j++){
+//       if(gridStructure.headerArea){
+//         Team5.layoutCreate.header()
+//         Team5.layoutCreate.HeaderText('Header')
+//         gridStructure.headerArea = false
+//       }else if(gridStructure.footerArea){
+//         Team5.layoutCreate.footer()
+//         Team5.layoutCreate.FooterText('Footer')
+//         gridStructure.footerArea = false
+//       }else if(gridStructure.navArea){
+//         Team5.layoutCreate.nav()
+//         Team5.layoutCreate.NavText('Nav')
+//         gridStructure.navArea = false
+//       }else if(gridStructure.adsArea){
+//         Team5.layoutCreate.ads()
+//         Team5.layoutCreate.AdsText('Ads')
+//         gridStructure.adsArea = false
+//       }else if(gridStructure.articleArea){
+//         Team5.layoutCreate.article()
+//         Team5.layoutCreate.ArticleText('Article')
+//         gridStructure.articleArea = false
+//       }
+//     }
+//   }
+
+//   Team5.layoutCreate.grid(
+//     '"header header header" "nav article ads" "footer footer footer"',
+//     'auto',
+//     'auto',
+//     '1em',
+//     '1em',
+//     '100vh',
+//     'auto'
+//   )
+// },
+// }
+
+
+
+    //       gridTemplateAreas: "'header header header ' 'nav article ads' 'footer footer footer'",
+    //       gridTemplateRows: 'auto',
+    //       gridTemplateColumns: '1fr 1fr 1fr',
+    //       gridRowGap: '1em',
+    //       gridColumnGap: '1em',
+    //       height: '100vh',
+    //       margin: '0 auto',
+        
+       
+
+
+    //     let layoutStructure = {
+    //     header: false,
+    //     columns: ['nav', 'article', 'ads'],
+    //     footer: false,
+    //     column: 3,
+    //     columnSequence: ['nav', 'nav', 'ads'],
+    //   }
+
+    //     let gridTemplateAreas = ''
+    //     let gridTemplateRows = ''
+    //     let gridTemplateColumns = ''
+    //     let gridRowGap = ''
+    //     let gridColumnGap = ''
+    //     let height = ''
+    //     let margin = ''
+    //     let gridTemplateAreasmain = ''
+
+    //     if (layoutStructure.header == true) {
+    //       for(let i = 0; i < layoutStructure.column; i++) {
+    //         gridTemplateAreas += '"header header header" '
+    //       }
+    //       gridTemplateRows += 'auto '
+    //       gridTemplateColumns += '1fr 1fr 1fr '
+    //       gridRowGap += '1px '
+    //       height += 'auto '
+    //       margin += '0 '
+    //     }
+
+    //     // for( i = 0; i < layoutStructure.columns.length; i++) {
+          
+    //     //   if (layoutStructure.columns[i] == 'nav') {
+    //     //     gridTemplateAreasmain += '"nav" '
+    //     //   }
+
+    //     //   if (layoutStructure.columns[i] == 'article') {
+    //     //     gridTemplateAreasmain += '"article " '
+    //     //   }
+
+    //     //   if (layoutStructure.columns[i] == 'ads') {
+    //     //     gridTemplateAreasmain += '"ads" '
+    //     //   }
+
+    //     //   gridTemplateAreas += gridTemplateAreasmain + ' '
+    //     //   gridTemplateRows += 'auto '
+    //     //   gridTemplateColumns += '1fr 1fr 1fr '
+    //     //   gridRowGap += '1px '
+    //     //   height += 'auto '
+    //     //   margin += '0 '
+    //     // }
+
+    //       if(layoutStructure.columns.length == 1) {
+    //         gridTemplateAreas += '"article" '
+    //         gridTemplateColumns += 'auto '
+    //         gridColumnGap += '1px '
+    //         height += 'min-height: 100vh '
+          
+    //       } else if(layoutStructure.columns.length === 2) {
+    //         gridTemplateAreas += '"nav article" '
+    //         gridTemplateColumns += 'auto auto '
+    //         gridColumnGap += '1px '
+    //         height += 'min-height: 100vh '
+          
+    //       } else if(layoutStructure.columns.length === 3) {
+    //         gridTemplateAreas += '"nav article ads" '
+    //         gridTemplateColumns += 'auto auto auto '
+    //         gridColumnGap += '1px '
+    //         height += 'min-height: 100vh '
+    //       }
+
+
+
+
+    //       // for(let i = 0; i < layoutStructure.column; i++) {
+    //       //   if(layoutStructure.columnSequence[i] == 1) {
+    //       //     gridTemplateAreas += '"nav" '
+    //       //   }
+
+    //       //   if(layoutStructure.columnSequence[i] == 2) {
+    //       //     gridTemplateAreas += '"nav article" '
+    //       //   }
+
+    //       //   if(layoutStructure.columnSequence[i] == 3) {
+    //       //     gridTemplateAreas += '"nav article ads" '
+    //       //   }
+
+    //       //   gridTemplateRows += 'auto '
+    //       //   gridTemplateColumns += '1fr 1fr 1fr '
+    //       //   gridRowGap += '1px '
+    //       //   height += 'auto '
+    //       //   margin += '0 '
+    //       // }
+
+
+
+    //       if(layoutStructure.footer === true) {
+    //         for(let i = 0; i < layoutStructure.column; i++) {
+    //           gridTemplateAreas += '"footer footer footer" '
+    //         }
+    //         gridTemplateRows += 'auto '
+    //         gridTemplateColumns += '1fr 1fr 1fr '
+    //         gridRowGap += '1px '
+    //         height += 'auto '
+    //         margin += '0 '
+    //       }
+    //       Team5.layoutCreate.grid(
+    //         gridTemplateAreas,
+    //         gridTemplateRows,
+    //         gridTemplateColumns,
+    //         gridRowGap,
+    //         gridColumnGap,
+    //         height,
+    //         margin
+    //       )
+
+    //       if(layoutStructure.header === true) {
+    //         Team5.layoutCreate.header()
+    //         Team5.layoutCreate.HeaderText('Header')
+    //       }
+
+    //       if(layoutStructure.columns.length === 1) {
+    //         Team5.layoutCreate.article()
+    //         Team5.layoutCreate.ArticleText('Article')
+    //       } else if(layoutStructure.columns.length === 2) {
+    //         Team5.layoutCreate.nav()
+    //         Team5.layoutCreate.NavText('Nav')
+    //         Team5.layoutCreate.article()
+    //         Team5.layoutCreate.ArticleText('Article')
+    //       } else if(layoutStructure.columns.length === 3) {
+    //         Team5.layoutCreate.nav()
+    //         Team5.layoutCreate.NavText('Nav')
+    //         Team5.layoutCreate.article()
+    //         Team5.layoutCreate.ArticleText('Article')
+    //         Team5.layoutCreate.ads()
+    //         Team5.layoutCreate.AdsText('Ads')
+    //       }
+
+    //       if(layoutStructure.footer === true) {
+    //         Team5.layoutCreate.footer()
+    //         Team5.layoutCreate.FooterText('Footer')
+    //       }
+
+    //   }
+    // }
+  
+
+   
+
+
+

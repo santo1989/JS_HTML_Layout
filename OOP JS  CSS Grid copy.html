@@ -120,30 +120,76 @@
       },
 
       display: () => {
-        Team5.layoutCreate.grid(
-          '"header header header header header" "nav article article article ads" "footer footer footer footer footer"',
-          'auto',
-          'auto',
-          '1px',
-          '1px',
-          '100vh',
-          'auto'
-        )
-        Team5.layoutCreate.header()
-        Team5.layoutCreate.article()
-        Team5.layoutCreate.nav()
-        Team5.layoutCreate.ads()
-        Team5.layoutCreate.footer()
-        Team5.layoutCreate.HeaderText('Header')
-        Team5.layoutCreate.ArticleText('Article')
-        Team5.layoutCreate.NavText('Nav')
-        Team5.layoutCreate.AdsText('Ads')
-        Team5.layoutCreate.FooterText('Footer')
-      }
-      
 
-    }
-     
+        
+
+        let gridLayoutTempate = {
+          r1c1: 'nav',
+          r1c2: 'article',
+          r1c3: 'ads',
+          r2c1: 'nav',
+          r2c2: 'article',
+          r2c3: 'ads',
+          r3c1: 'nav',
+          r3c2: 'article',
+          r3c3: 'ads'
+          
+        }
+
+  
+        let gridLayout = {
+          gridTemplateAreas: `"${gridLayoutTempate.r1c1} ${gridLayoutTempate.r1c2} ${gridLayoutTempate.r1c3}" "${gridLayoutTempate.r2c1} ${gridLayoutTempate.r2c2} ${gridLayoutTempate.r2c3}" "${gridLayoutTempate.r3c1} ${gridLayoutTempate.r3c2} ${gridLayoutTempate.r3c3}"`,
+       
+          gridTemplateRows: '1fr 3fr 1fr',
+          gridTemplateColumns: '1fr 3fr 1fr',
+          gridRowGap: '1px',
+          gridColumnGap: '1px',
+          height: '100vh',
+          margin: '0 auto',
+        }
+
+        Team5.layoutCreate.grid(
+          gridLayout.gridTemplateAreas,
+          gridLayout.gridTemplateRows,
+          gridLayout.gridTemplateColumns,
+          gridLayout.gridRowGap,
+          gridLayout.gridColumnGap,
+          gridLayout.height,
+          gridLayout.margin
+        )
+        for (let i = 0; i < 9; i++) {
+if(Object.values(gridLayoutTempate)[i] === 'header'){
+  Team5.layoutCreate.header()
+}
+if(Object.values(gridLayoutTempate)[i] === 'article'){
+  Team5.layoutCreate.article()
+}
+if(Object.values(gridLayoutTempate)[i] === 'nav'){
+  Team5.layoutCreate.nav()
+}
+if(Object.values(gridLayoutTempate)[i] === 'ads'){
+  Team5.layoutCreate.ads()
+}
+if(Object.values(gridLayoutTempate)[i] === 'footer'){
+  Team5.layoutCreate.footer()
+}
+
+        }
+        // for (let i = 0; i < 9; i++) {
+        //   let gridArea = Object.values(gridLayoutTempate)[i]
+        //   Team5.layoutCreate[gridArea]()
+          
+        // }
+
+       
+
+
+        
+      },
+
+
+        
+     }
 
     let btn = document.createElement('button')
     btn.textContent = 'show'
@@ -155,15 +201,3 @@
     })
   </script>
 </body>
-
-
-
-       
-
-     
-        
-
-
-    
-        
-

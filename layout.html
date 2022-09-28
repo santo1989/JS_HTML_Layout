@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let layoutStructure = {
+        header: false,
+        columns: ['nav', 'article', 'ads'],
+        footer: false,
+        column: 3,
+        columnSequence: ['nav', 'article', 'ads'],
+      }
+
+      let Team5 = {}
+
+      Team5.Layout = {
+        header: () => {
+          let headerContainer = document.createElement('div')
+          headerContainer.setAttribute(
+            'style',
+            ' display:grid; grid-template-columns: 1fr 1fr 1fr; background-color: #4287f5; padding: 0px; margin: 0px; height: 15vh; width: 100%;'
+          )
+          let header = document.createTextNode('This is Header')
+
+          headerContainer.appendChild(header)
+          document.getElementsByTagName('body')[0].appendChild(headerContainer)
+          return headerContainer
+        },
+        footer: () => {
+          let footerContainer = document.createElement('div')
+          footerContainer.setAttribute(
+            'style',
+            'display:grid; align-items:center; background: yellowgreen; padding: 0px;box-sizing: border-box; grid-template-columns: 1fr 1fr 1fr; width: 100%;  height: 15vh;'
+          )
+          let footer = document.createTextNode('This is Footer')
+          footerContainer.appendChild(footer)
+          document.getElementsByTagName('body')[0].appendChild(footerContainer)
+          return footerContainer
+        },
+        nav: (position, width = 0) => {
+          let navContainer = document.createElement('div')
+          navContainer.setAttribute(
+            'style',
+            'display:grid; align-items:center; background: #f1f1f1; padding: 0px;box-sizing: border-box; grid-template-columns: 1fr 1fr 1fr ; width: 100%;'
+          )
+          let nav = document.createTextNode('Nav')
+          navContainer.appendChild(nav)
+
+          return navContainer
+        },
+        article: (position, width = 1) => {
+          let articleContainer = document.createElement('div')
+          articleContainer.setAttribute(
+            `style`,
+            `grid: ${width} 0 20%; background: blue; order: ${position}; padding: 1em; box-sizing: border-box; width: 100%;`
+          )
+          let article = document.createTextNode('Article')
+          articleContainer.appendChild(article)
+
+          return articleContainer
+        },
+        ads: (position, width = 0) => {
+          let adsContainer = document.createElement('div')
+          adsContainer.setAttribute(
+            `style`,
+            `grid:${width} 0 20%; background: red; order: ${position}; padding: 1em; box-sizing: border-box; height:100%; width: 100%;`
+          )
+          let ads = document.createTextNode('ads')
+          adsContainer.appendChild(ads)
+
+          return adsContainer
+        },
+        mainContainer: () => {
+          let mainContainer = document.createElement('main')
+          mainContainer.setAttribute('id', 'main')
+          mainContainer.setAttribute(
+            'style',
+            'display:grid; grid-template-areas:100vh; grid-template-columns: 1fr 1fr 1fr; min-height: 100vh; width: 100%;'
+          )
+          document.getElementsByTagName('body')[0].appendChild(mainContainer)
+          return mainContainer
+        },
+
+        build: (layoutTemplate) => {
+          if (layoutTemplate.header) {
+            Team5.Layout.header()
+          }
+          Team5.Layout.mainContainer()
+
+          layoutTemplate.columns.forEach((column) => {
+            layoutTemplate.columnSequence.forEach((element, index) => {
+              if (column == 'nav' && element == 'nav') {
+                if (layoutTemplate.column < 3) {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.nav(index, 0))
+                } else {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.nav(index, 1))
+                }
+              } else if (column == 'article' && element == 'article') {
+                if (layoutTemplate.column < 3) {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.article(index, 1))
+                } else {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.article(index, 2))
+                }
+              } else if (column == 'ads' && element == 'ads') {
+                if (layoutTemplate.column < 3) {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.ads(index, 0))
+                } else {
+                  document
+                    .getElementById('main')
+                    .appendChild(Team5.Layout.ads(index, 1))
+                }
+              }
+            })
+          })
+
+          if (layoutTemplate.footer) {
+            Team5.Layout.footer()
+          }
+        },
+        // html: ()=>{
+        //     let generatedHTML = "";
+        //     document.querySelectorAll("body > :not(script)").forEach((value)=>{
+        //         generatedHTML += value.outerHTML;
+        //     });
+        //     return generatedHTML;
+        // },
+      }
+      Team5.Layout.build(layoutStructure)
+      // console.log(Team5.Layout.html());
+    </script>
+  </body>
+</html>
